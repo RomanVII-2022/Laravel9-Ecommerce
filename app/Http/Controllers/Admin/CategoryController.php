@@ -43,6 +43,6 @@ class CategoryController extends Controller
         $category->status = $request->status == true ? '1':'0';
 
         $category->save();
-        return redirect()->route('categories')->with('message', 'Category was answered successfully');
+        return redirect()->route('categories')->with('message', 'Category was added successfully');
     }
 }
