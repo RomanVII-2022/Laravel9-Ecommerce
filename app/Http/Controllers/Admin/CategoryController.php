@@ -12,6 +12,7 @@ use Illuminate\Contracts\Support\ValidatedData;
 class CategoryController extends Controller
 {
     public function index () {
+
         return view('admin.categories');
     }
 
@@ -44,5 +45,10 @@ class CategoryController extends Controller
 
         $category->save();
         return redirect()->route('categories')->with('message', 'Category was added successfully');
+    }
+
+    public function edit(Category $category)
+    {
+        return view('admin.editcategory', compact('category'));
     }
 }
