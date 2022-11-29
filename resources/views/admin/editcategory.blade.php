@@ -9,8 +9,9 @@
         <div class="col-sm-12 col-xl-10">
             <div class="bg-secondary rounded h-100 p-4">
                 <h6 class="mb-4">Edit Category Form</h6>
-                <form method="POST" action="{{ url('admin/category/'.$category->id.'/edit') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('admin/category/'.$category->id) }}" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <input type="text" name="name" value="{{ $category->name }}" class="form-control">

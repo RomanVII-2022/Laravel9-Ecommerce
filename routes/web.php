@@ -30,6 +30,7 @@ Route::prefix('admin')->middleware(['auth', 'adminAs'])->group(function () {
         Route::get('/addcategoty', 'create')->name('addcategory');
         Route::post('/category', 'store')->name('category');
         Route::get('/category/{category}/edit', 'edit')->name('editcategory');
+        Route::put('/category/{category}', 'update');
     });
 
 });
