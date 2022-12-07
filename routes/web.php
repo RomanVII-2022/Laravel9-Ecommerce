@@ -33,4 +33,10 @@ Route::prefix('admin')->middleware(['auth', 'adminAs'])->group(function () {
         Route::put('/category/{category}', 'update');
     });
 
+    Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
+        Route::get('/products', 'index')->name('products');
+        Route::get('/addproduct', 'create')->name('addProduct');
+    });
+
+    Route::get('brands', [App\Http\Controllers\Admin\BrandController::class, 'index'])->name('brands');
 });

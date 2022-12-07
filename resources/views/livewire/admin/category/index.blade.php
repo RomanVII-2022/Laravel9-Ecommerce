@@ -27,7 +27,7 @@
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->status == '1' ? 'Hidden':'Visible' }}</td>
-                            <td><a href="{{ url('admin/category/'.$category->id.'/edit') }}" class="btn btn-light">Update</a> - 
+                            <td><a href="{{ url('admin/category/'.$category->id.'/edit') }}" class="btn btn-success">Update</a> - 
                                 <a href="" wire:click="deleteCategoryBtn({{ $category->id }})" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteCategoryModal">Delete</a></td>
                         </tr>
                         @empty
@@ -43,6 +43,7 @@
         </div>
     </div>
     <!-- Recent Sales End -->
+
 
     <!-- Modal -->
     <div wire:ignore.self class="modal fade" id="deleteCategoryModal" tabindex="-1" aria-labelledby="deleteCategoryModalLabel" aria-hidden="true">
